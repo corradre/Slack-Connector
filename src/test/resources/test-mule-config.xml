@@ -1,0 +1,19 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:basic="http://www.mulesoft.org/schema/mule/basic"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+          http://www.mulesoft.org/schema/mule/basic http://www.mulesoft.org/schema/mule/basic/current/mule-basic.xsd">
+
+    <basic:config name="config" configId="1">
+        <basic:connection token="xoxe.xoxp-1-Mi0yLTIyMjg3OTg3MzgtMjI1ODUzMDgyNjgyMC0zNjI0MDg4MDgzNTkxLTM2NTc4MDg1NDIwNDktOTM2MWVhMDE4MDFiYjQ5NTllYjZhODgzNDE2YTIxODg5NzYxNTVkNTBiZDYyNDJlOGU2ODQ1NDMxOTJlNmY3ZA" />
+    </basic:config>
+
+    <flow name="sayHiFlow">
+        <basic:say-hi person="Mariano Gonzalez"/>
+    </flow>
+
+    <flow name="retrieveInfoFlow">
+        <basic:retrieve-info config-ref="config"/>
+    </flow>
+
+</mule>

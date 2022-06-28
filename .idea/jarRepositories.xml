@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="mulesoft-snapshots" />
+      <option name="name" value="Mule Snapshots Repository" />
+      <option name="url" value="https://repository-master.mulesoft.org/nexus/content/repositories/snapshots/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="mulesoft-private" />
+      <option name="name" value="Local repository for thirdparty" />
+      <option name="url" value="https://repository-master.mulesoft.org/nexus/content/repositories/private/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="mule-ee" />
+      <option name="name" value="MuleEE Releases Repository" />
+      <option name="url" value="https://repository-master.mulesoft.org/nexus/content/repositories/ci-releases/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="mulesoft-releases" />
+      <option name="name" value="Mule Releases Repository" />
+      <option name="url" value="https://repository-master.mulesoft.org/nexus/content/repositories/releases/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="mule-ee-dependencies" />
+      <option name="name" value="Mule EE Dependencies" />
+      <option name="url" value="https://repository-master.mulesoft.org/nexus/content/groups/mule-ee-dependencies/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="mule-releases" />
+      <option name="name" value="Nexus Public Releases" />
+      <option name="url" value="https://repository-master.mulesoft.org/nexus/content/repositories/releases/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="mule-ee-snapshots" />
+      <option name="name" value="MuleEE Snapshots Repository" />
+      <option name="url" value="https://repository-master.mulesoft.org/nexus/content/repositories/ci-snapshots/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="mule" />
+      <option name="name" value="Mule Repository" />
+      <option name="url" value="https://repository.mulesoft.org/nexus/content/repositories/public/" />
+    </remote-repository>
+  </component>
+</project>
