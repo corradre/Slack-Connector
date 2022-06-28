@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule
+        xmlns:mtf="http://www.mulesoft.org/schema/mule/mtf"
+        xmlns:basic="http://www.mulesoft.org/schema/mule/basic"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:munit="http://www.mulesoft.org/schema/mule/munit"
+        xmlns="http://www.mulesoft.org/schema/mule/core"
+        xsi:schemaLocation="
+            http://www.mulesoft.org/schema/mule/basic http://www.mulesoft.org/schema/mule/basic/current/mule-basic.xsd
+            http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+            http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+            http://www.mulesoft.org/schema/mule/mtf http://www.mulesoft.org/schema/mule/mtf/current/mule-mtf.xsd
+">
+    <munit:config name="validateConnection.xml"/>
+
+    <basic:config name="config" configId="1">
+        <basic:connection token="---" />
+    </basic:config>
+
+    <munit:test name="valid-paginated-json-response">
+        <munit:execution >
+            <basic:get-channels config-ref="config"/>
+        </munit:execution>
+    </munit:test>
+
+    <munit:test name="validateConnection">
+        <munit:execution>
+            <mtf:test-connectivity config-ref="config"/>
+        </munit:execution>
+    </munit:test>
+</mule>

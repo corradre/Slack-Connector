@@ -1,0 +1,8 @@
+org/mule/extension/internal/BasicExtension.class
+org/mule/extension/internal/SlackEndPoints.class
+org/mule/extension/internal/BasicConfiguration.class
+org/mule/extension/internal/ExecuteErrorsProvider.class
+org/mule/extension/internal/SlackErrors.class
+org/mule/extension/internal/BasicConnection.class
+org/mule/extension/internal/BasicConnectionProvider.class
+org/mule/extension/internal/BasicOperations.class
