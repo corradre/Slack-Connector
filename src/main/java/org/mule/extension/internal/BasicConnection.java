@@ -7,14 +7,12 @@ import org.mule.runtime.http.api.client.HttpClient;
 import org.mule.runtime.http.api.client.HttpClientConfiguration;
 import org.mule.runtime.http.api.client.proxy.ProxyConfig;
 import org.mule.runtime.http.api.domain.entity.HttpEntity;
+import org.mule.runtime.http.api.domain.entity.InputStreamHttpEntity;
 import org.mule.runtime.http.api.domain.message.request.HttpRequest;
 import org.mule.runtime.http.api.domain.message.response.HttpResponse;
 
 import javax.inject.Inject;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.URI;
 
 import static java.lang.String.format;
@@ -55,13 +53,14 @@ public final class BasicConnection {
   }
 
 
-  public HttpResponse doRequest(String endpoint, String base_uri, HttpConstants.Method method) {
+  public HttpResponse doRequest(String endpoint, String base_uri, HttpConstants.Method method, String parameters) {
 
     HttpRequest request;
     request = HttpRequest.builder()
         .uri(URI.create(base_uri + endpoint))
         .addHeader("Authorization", "Bearer " + token)
         .addHeader("Content-Type", "application/json")
+        .entity(new InputStreamHttpEntity(new ByteArrayInputStream(parameters.getBytes())))
         .method(method)
         .build();
 

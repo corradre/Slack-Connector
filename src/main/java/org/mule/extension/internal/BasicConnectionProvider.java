@@ -56,7 +56,7 @@ public class BasicConnectionProvider implements PoolingConnectionProvider<BasicC
     @Override
     public ConnectionValidationResult validate(BasicConnection connection) {
       try {
-          HttpResponse response = connection.doRequest(AUTH_TEST, BASE_URI, HttpConstants.Method.POST);
+          HttpResponse response = connection.doRequest(AUTH_TEST, BASE_URI, HttpConstants.Method.POST, null);
           String result = null;
           result = convertStreamToString(response);
           if(response.getStatusCode() == 200 && result.contains("\"ok\":true"))

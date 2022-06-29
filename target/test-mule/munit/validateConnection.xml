@@ -14,7 +14,7 @@
     <munit:config name="validateConnection.xml"/>
 
     <basic:config name="config" configId="1">
-        <basic:connection token="---" />
+        <basic:connection token="xoxb-2307039614839-2339322620549-epKuYz5fv9WlwEAX2CtiFL2M" />
     </basic:config>
 
     <munit:test name="valid-paginated-json-response">
