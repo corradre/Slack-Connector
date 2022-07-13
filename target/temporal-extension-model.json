@@ -1,14 +1,14 @@
 {
   "name": "Basic",
   "description": "This is the main class of an extension, is the entry point from which configurations, connection providers, operations and sources are going to be declared.",
-  "version": "1.0.8-SNAPSHOT",
+  "version": "1.0.9-SNAPSHOT",
   "vendor": "Mulesoft",
   "category": "COMMUNITY",
   "xmlDsl": {
     "prefix": "basic",
     "namespace": "http://www.mulesoft.org/schema/mule/basic",
     "schemaLocation": "http://www.mulesoft.org/schema/mule/basic/current/mule-basic.xsd",
-    "schemaVersion": "1.0.8-SNAPSHOT",
+    "schemaVersion": "1.0.9-SNAPSHOT",
     "xsdFileName": "mule-basic.xsd"
   },
   "resources": [],

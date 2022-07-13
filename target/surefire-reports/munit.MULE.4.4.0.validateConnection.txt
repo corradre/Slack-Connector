@@ -1,0 +1,6 @@
+SUCCESS - Test valid-paginated-json-response finished Successfully.
+SUCCESS - Test validateConnection finished Successfully.
+
+==============================================================================
+Tests run: 2 - Failures: 0 - Errors: 0 - Skipped: 0 - Time elapsed: 47.208 sec
+==============================================================================

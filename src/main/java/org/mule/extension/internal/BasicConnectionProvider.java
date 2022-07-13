@@ -2,6 +2,10 @@ package org.mule.extension.internal;
 
 import org.json.JSONObject;
 import org.mule.runtime.api.connection.ConnectionException;
+import org.mule.runtime.api.el.BindingContext;
+import org.mule.runtime.api.el.ExpressionLanguage;
+import org.mule.runtime.api.metadata.DataType;
+import org.mule.runtime.api.metadata.TypedValue;
 import org.mule.runtime.extension.api.annotation.Export;
 import org.mule.runtime.extension.api.annotation.param.Parameter;
 import org.mule.runtime.extension.api.annotation.param.Optional;
@@ -45,6 +49,9 @@ public class BasicConnectionProvider implements PoolingConnectionProvider<BasicC
     @Inject
     private HttpService httpService;
 
+    @Inject
+    ExpressionLanguage expressionLanguage;
+
   @Override
   public BasicConnection connect() throws ConnectionException {
     return new BasicConnection(token, httpService);
@@ -55,19 +62,30 @@ public class BasicConnectionProvider implements PoolingConnectionProvider<BasicC
 
     @Override
     public ConnectionValidationResult validate(BasicConnection connection) {
-      try {
-          HttpResponse response = connection.doRequest(AUTH_TEST, BASE_URI, HttpConstants.Method.POST, null);
-          String result = null;
-          result = convertStreamToString(response);
-          if(response.getStatusCode() == 200 && result.contains("\"ok\":true"))
-          {
-              return ConnectionValidationResult.success();
-          }
-      }
-      catch (Exception ex)
-      {
-          return ConnectionValidationResult.failure("fallo", ex);
-      }
-      return ConnectionValidationResult.failure("fallo", null);
+        try {
+            HttpResponse response = connection.doRequest(AUTH_TEST, BASE_URI, HttpConstants.Method.POST, "");
+            InputStream content = response.getEntity().getContent();
+
+            TypedValue<String> tvInput = new TypedValue(content, DataType.JSON_STRING);
+
+            TypedValue<?> typedValue = expressionLanguage
+                .evaluate(
+                    "#[payload.ok]",
+                    BindingContext.builder()
+                        .addBinding("payload", tvInput)
+                        .build());
+
+            boolean okResult = Boolean.parseBoolean(typedValue.getValue().toString());
+
+            if(okResult)
+            {
+                return ConnectionValidationResult.success();
+            }
+        }
+        catch (Throwable t)
+        {
+            String asd = "asd";
+        }
+        return ConnectionValidationResult.failure("fallo", null);
     }
 }

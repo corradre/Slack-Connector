@@ -1,0 +1,26 @@
+{
+  "configs": [
+    "validateConnection.xml"
+  ],
+  "redeploymentEnabled": true,
+  "name": "Basic",
+  "minMuleVersion": "4.4.0",
+  "requiredProduct": "MULE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "includeTestDependencies": "true",
+      "exportedPackages": [],
+      "privilegedExportedPackages": [],
+      "exportedResources": [
+        "test-mule-config.xml",
+        "log4j2-test.xml"
+      ],
+      "privilegedArtifactIds": []
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}

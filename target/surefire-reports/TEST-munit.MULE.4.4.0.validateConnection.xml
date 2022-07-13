@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="MULE.4.4.0.validateConnection" time="47.208" failures="0" errors="0" skipped="0" tests="2">
+  <properties>
+    <property key="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property key="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib"/>
+    <property key="java.vm.version" value="25.301-b09"/>
+    <property key="gopherProxySet" value="false"/>
+    <property key="maven.multiModuleProjectDirectory" value="/Users/corradre/Desktop/NewClone/Slack-Connector"/>
+    <property key="java.vm.vendor" value="Oracle Corporation"/>
+    <property key="java.vendor.url" value="http://java.oracle.com/"/>
+    <property key="guice.disable.misplaced.annotation.check" value="true"/>
+    <property key="path.separator" value=":"/>
+    <property key="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property key="file.encoding.pkg" value="sun.io"/>
+    <property key="user.country" value="AR"/>
+    <property key="sun.java.launcher" value="SUN_STANDARD"/>
+    <property key="sun.os.patch.level" value="unknown"/>
+    <property key="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property key="user.dir" value="/Users/corradre/Desktop/NewClone/Slack-Connector"/>
+    <property key="java.runtime.version" value="1.8.0_301-b09"/>
+    <property key="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property key="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property key="os.arch" value="x86_64"/>
+    <property key="java.io.tmpdir" value="/var/folders/f9/jsnc6c396dj5ysf9h81f69mw0000gq/T/"/>
+    <property key="line.separator" value="&#xa;"/>
+    <property key="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property key="os.name" value="Mac OS X"/>
+    <property key="classworlds.conf" value="/usr/local/Cellar/maven/3.8.5/libexec/bin/m2.conf"/>
+    <property key="sun.jnu.encoding" value="UTF-8"/>
+    <property key="java.library.path" value="/Users/corradre/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property key="maven.conf" value="/usr/local/Cellar/maven/3.8.5/libexec/conf"/>
+    <property key="java.specification.name" value="Java Platform API Specification"/>
+    <property key="java.class.version" value="52.0"/>
+    <property key="java.net.preferIPv4Stack" value="true"/>
+    <property key="munit.debug" value="true"/>
+    <property key="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property key="os.version" value="10.16"/>
+    <property key="library.jansi.path" value="/usr/local/Cellar/maven/3.8.5/libexec/lib/jansi-native"/>
+    <property key="user.home" value="/Users/corradre"/>
+    <property key="user.timezone" value="America/Argentina/Buenos_Aires"/>
+    <property key="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property key="file.encoding" value="UTF-8"/>
+    <property key="java.specification.version" value="1.8"/>
+    <property key="java.class.path" value="/usr/local/Cellar/maven/3.8.5/libexec/boot/plexus-classworlds-2.6.0.jar"/>
+    <property key="user.name" value="corradre"/>
+    <property key="mule.forceExtensionValidation" value="false"/>
+    <property key="exportedPackagesValidator.skip" value="false"/>
+    <property key="java.vm.specification.version" value="1.8"/>
+    <property key="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean verify -Dmunit.debug"/>
+    <property key="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre"/>
+    <property key="sun.arch.data.model" value="64"/>
+    <property key="user.language" value="en"/>
+    <property key="java.specification.vendor" value="Oracle Corporation"/>
+    <property key="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property key="java.vm.info" value="mixed mode"/>
+    <property key="java.version" value="1.8.0_301"/>
+    <property key="java.ext.dirs" value="/Users/corradre/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property key="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home/jre/classes"/>
+    <property key="java.vendor" value="Oracle Corporation"/>
+    <property key="maven.home" value="/usr/local/Cellar/maven/3.8.5/libexec"/>
+    <property key="file.separator" value="/"/>
+    <property key="exportedPackagesValidator.strictValidation" value="false"/>
+    <property key="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property key="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property key="sun.cpu.endian" value="little"/>
+    <property key="sun.cpu.isalist" value=""/>
+    <property key="munit.system.properties.file" value="/Users/corradre/Desktop/NewClone/Slack-Connector/target/user.system.properties"/>
+    <property key="org.glassfish.grizzly.DEFAULT_MEMORY_MANAGER" value="org.glassfish.grizzly.memory.HeapMemoryManager"/>
+  </properties>
+  <testcase time="40.926" name="valid-paginated-json-response" classname="MULE.4.4.0.validateConnection"/>
+  <testcase time="6.249" name="validateConnection" classname="MULE.4.4.0.validateConnection"/>
+</testsuite>

@@ -1,0 +1,78 @@
+{
+  "runToken": "e154654f-10ac-4377-8925-a0578f1ddfc3",
+  "projectName": "mule-basic-extension-test-application",
+  "domainLocation": "",
+  "tags": [],
+  "testNames": [],
+  "suitePaths": [
+    "validateConnection.xml"
+  ],
+  "allSuitePaths": [
+    "validateConnection.xml"
+  ],
+  "skipAfterFailure": false,
+  "notifierConfigurations": [
+    {
+      "clazz": "org.mule.munit.remote.notifiers.ConsoleNotifier",
+      "parameters": [
+        {
+          "name": "runToken",
+          "type": "java.lang.String",
+          "value": "e154654f-10ac-4377-8925-a0578f1ddfc3"
+        }
+      ]
+    }
+  ],
+  "containerConfiguration": {
+    "type": "EMBEDDED",
+    "value": {
+      "mavenConfiguration": {
+        "settingsXmlFilePath": "/Users/corradre/.m2/settings.xml",
+        "globalSettingsXmlFilePath": "/usr/local/Cellar/maven/3.8.5/libexec/conf/settings.xml",
+        "mavenRepositoryDirectoryPath": "/Users/corradre/.m2/repository",
+        "activeProfiles": [
+          "default-profile"
+        ],
+        "offlineMode": false,
+        "forcePolicyUpdate": true,
+        "ignoreArtifactDescriptorRepositories": false,
+        "remoteRepositories": [
+          {
+            "id": "mulesoft-releases",
+            "url": "https://repository-master.mulesoft.org/nexus/content/repositories/releases/"
+          },
+          {
+            "id": "mulesoft-snapshots",
+            "url": "https://repository-master.mulesoft.org/nexus/content/repositories/snapshots/"
+          },
+          {
+            "id": "mule-ee-snapshots",
+            "url": "https://repository-master.mulesoft.org/nexus/content/repositories/ci-snapshots/"
+          },
+          {
+            "id": "mule-ee",
+            "url": "https://repository-master.mulesoft.org/nexus/content/repositories/ci-releases/"
+          },
+          {
+            "id": "mulesoft-plugin-releases",
+            "url": "https://repository-master.mulesoft.org/releases/"
+          },
+          {
+            "id": "mulesoft-plugin-snapshots",
+            "url": "https://repository-master.mulesoft.org/snapshots/"
+          },
+          {
+            "id": "central",
+            "url": "https://repo.maven.apache.org/maven2"
+          }
+        ]
+      },
+      "serverPluginConfigurations": [],
+      "runtimeId": "4.4.0",
+      "product": "MULE",
+      "munitWorkingDirectoryPath": "/Users/corradre/Desktop/NewClone/Slack-Connector/target/munitworkingdir-11517644198220",
+      "log4JConfigurationFilePath": "/Users/corradre/Desktop/NewClone/Slack-Connector/target/test-classes/log4j2-test.xml",
+      "type": "EMBEDDED"
+    }
+  }
+}
