@@ -31,19 +31,9 @@ public class BasicOperations {
     @Throws(ExecuteErrorsProvider.class)
     public InputStream getChannels(@Config BasicConfiguration configuration, @Connection BasicConnection connection) {
         try {
-            HttpResponse response = connection.doRequest(CONVERSATION_LIST, BASE_URI, HttpConstants.Method.GET, "");
-            InputStream content = response.getEntity().getContent();
+            HttpResponse response = connection.doRequest(CONVERSATION_LIST, BASE_URI, HttpConstants.Method.GET, "",null);
 
-            TypedValue<String> tvInput = new TypedValue(content, DataType.JSON_STRING);
-
-            TypedValue<?> typedValue = expressionLanguage
-                .evaluate(
-                    "#[payload.ok]",
-                    BindingContext.builder()
-                        .addBinding("payload", tvInput)
-                        .build());
-
-            boolean okResult = Boolean.parseBoolean(typedValue.getValue().toString());
+            boolean okResult = evalauteExpression(response.getEntity().getContent(),"#[payload.ok]");
 
             if(okResult)
             {
@@ -67,20 +57,11 @@ public class BasicOperations {
 
             String jsonString = obj.toString();
 
-            HttpResponse response = connection.doRequest(POST_MESSAGE, BASE_URI, HttpConstants.Method.POST, jsonString);
+            HttpResponse response = connection.doRequest(POST_MESSAGE, BASE_URI, HttpConstants.Method.POST, jsonString, "");
 
-            InputStream content = response.getEntity().getContent();
+            String result = convertStreamToString(response);
 
-            TypedValue<String> tvInput = new TypedValue(content, DataType.JSON_STRING);
-
-            TypedValue<?> typedValue = expressionLanguage
-                .evaluate(
-                    "#[payload.ok]",
-                    BindingContext.builder()
-                        .addBinding("payload", tvInput)
-                        .build());
-
-            boolean okResult = Boolean.parseBoolean(typedValue.getValue().toString());
+            boolean okResult = evalauteExpression(response.getEntity().getContent(),"#[payload.ok]");
 
             if(okResult)
             {
@@ -91,4 +72,40 @@ public class BasicOperations {
             throw new ModuleException(SlackErrors.INVALID_PARAMETER, e);
         }
     }
+
+    @MediaType("application/json")
+    @Throws(ExecuteErrorsProvider.class)
+    public InputStream getChannelInfo(@Config BasicConfiguration configuration, @Connection BasicConnection connection, @NotNull String channel) {
+        try {
+
+            String url="?channel=" + channel;
+
+            HttpResponse response = connection.doRequest(CONVERSATIONS_INFO, BASE_URI, HttpConstants.Method.GET, "", url);
+
+            boolean okResult = evalauteExpression(response.getEntity().getContent(),"#[payload.ok]");
+
+            if(okResult)
+            {
+                return response.getEntity().getContent();
+            }
+            throw new IllegalStateException();
+        } catch (IllegalStateException e) {
+            throw new ModuleException(SlackErrors.INVALID_PARAMETER, e);
+        }
+    }
+
+    private boolean evalauteExpression(InputStream inputStream, String expression)
+    {
+        TypedValue<String> tvInput = new TypedValue(inputStream, DataType.JSON_STRING);
+
+        TypedValue<?> typedValue = expressionLanguage
+            .evaluate(
+                expression,
+                BindingContext.builder()
+                    .addBinding("payload", tvInput)
+                    .build());
+
+        return Boolean.parseBoolean(typedValue.getValue().toString());
+    }
+
 }

@@ -53,11 +53,11 @@ public final class BasicConnection {
   }
 
 
-  public HttpResponse doRequest(String endpoint, String base_uri, HttpConstants.Method method, String parameters) {
+  public HttpResponse doRequest(String endpoint, String base_uri, HttpConstants.Method method, String parameters, String urlParameters) {
 
     HttpRequest request;
     request = HttpRequest.builder()
-        .uri(URI.create(base_uri + endpoint))
+        .uri(URI.create(base_uri + endpoint) + urlParameters)
         .addHeader("Authorization", "Bearer " + token)
         .addHeader("Content-Type", "application/json")
         .entity(new InputStreamHttpEntity(new ByteArrayInputStream(parameters.getBytes())))

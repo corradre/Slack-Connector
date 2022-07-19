@@ -5,4 +5,5 @@ public class SlackEndPoints {
     public static final String AUTH_TEST = "/auth.test";
     public static final String CONVERSATION_LIST = "/conversations.list";
     public static final String POST_MESSAGE = "/chat.postMessage";
+    public static final String CONVERSATIONS_INFO = "/conversations.info";
 }

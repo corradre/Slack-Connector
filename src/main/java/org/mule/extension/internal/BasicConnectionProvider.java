@@ -63,7 +63,7 @@ public class BasicConnectionProvider implements PoolingConnectionProvider<BasicC
     @Override
     public ConnectionValidationResult validate(BasicConnection connection) {
         try {
-            HttpResponse response = connection.doRequest(AUTH_TEST, BASE_URI, HttpConstants.Method.POST, "");
+            HttpResponse response = connection.doRequest(AUTH_TEST, BASE_URI, HttpConstants.Method.POST, "","");
             InputStream content = response.getEntity().getContent();
 
             TypedValue<String> tvInput = new TypedValue(content, DataType.JSON_STRING);

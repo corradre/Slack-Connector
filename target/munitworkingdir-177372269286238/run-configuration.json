@@ -1,5 +1,5 @@
 {
-  "runToken": "e154654f-10ac-4377-8925-a0578f1ddfc3",
+  "runToken": "deb1e586-30f0-43ba-a4e1-5e12b91b2617",
   "projectName": "mule-basic-extension-test-application",
   "domainLocation": "",
   "tags": [],
@@ -18,7 +18,7 @@
         {
           "name": "runToken",
           "type": "java.lang.String",
-          "value": "e154654f-10ac-4377-8925-a0578f1ddfc3"
+          "value": "deb1e586-30f0-43ba-a4e1-5e12b91b2617"
         }
       ]
     }
@@ -70,7 +70,7 @@
       "serverPluginConfigurations": [],
       "runtimeId": "4.4.0",
       "product": "MULE",
-      "munitWorkingDirectoryPath": "/Users/corradre/Desktop/NewClone/Slack-Connector/target/munitworkingdir-11517644198220",
+      "munitWorkingDirectoryPath": "/Users/corradre/Desktop/NewClone/Slack-Connector/target/munitworkingdir-177372269286238",
       "log4JConfigurationFilePath": "/Users/corradre/Desktop/NewClone/Slack-Connector/target/test-classes/log4j2-test.xml",
       "type": "EMBEDDED"
     }

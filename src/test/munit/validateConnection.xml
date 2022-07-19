@@ -14,12 +14,18 @@
     <munit:config name="validateConnection.xml"/>
 
     <basic:config name="config" configId="1">
-        <basic:connection token="xoxp-2307039614839-2327951970868-2322135978515-e9144c52fded5ed542223f391d30829a" />
+        <basic:connection token="xoxb-2307039614839-2339322620549-UDCHaiUJseRTPF1kJarvfWyF" />
     </basic:config>
 
     <munit:test name="valid-paginated-json-response">
         <munit:execution >
             <basic:get-channels config-ref="config"/>
+        </munit:execution>
+    </munit:test>
+
+    <munit:test name="valid-paginated-json-response2">
+        <munit:execution >
+            <basic:get-channel-info config-ref="config" channel="C029FNCFJAE"/>
         </munit:execution>
     </munit:test>
 

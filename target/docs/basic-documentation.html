@@ -2119,6 +2119,9 @@ p.tableblock {
 <div class="ulist">
 <ul>
 <li>
+<p><a href="#GetChannelInfo">Get Channel Info</a> &#160;</p>
+</li>
+<li>
 <p><a href="#GetChannels">Get Channels</a> &#160;</p>
 </li>
 <li>
@@ -2137,10 +2140,10 @@ p.tableblock {
 </div>
 </div>
 <div class="sect1">
-<h2 id="GetChannels">Get Channels</h2>
+<h2 id="GetChannelInfo">Get Channel Info</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><code>&lt;basic:get-channels&gt;</code></p>
+<p><code>&lt;basic:get-channel-info&gt;</code></p>
 </div>
 <div class="sect2">
 <h3 id="_parameters_3">Parameters</h3>
@@ -2166,6 +2169,15 @@ p.tableblock {
 <td class="tableblock halign-left valign-top"><p class="tableblock">Configuration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The name of the configuration to use.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>x</strong>&#160;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Channel</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>String</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>x</strong>&#160;</p></td>
 </tr>
@@ -2295,13 +2307,171 @@ p.tableblock {
 </div>
 </div>
 <div class="sect1">
+<h2 id="GetChannels">Get Channels</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>&lt;basic:get-channels&gt;</code></p>
+</div>
+<div class="sect2">
+<h3 id="_parameters_4">Parameters</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Default Value</th>
+<th class="tableblock halign-left valign-top">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configuration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the configuration to use.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>x</strong>&#160;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Config Ref</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>ConfigurationProvider</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the configuration to be used to execute this component</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>x</strong>&#160;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Streaming Strategy</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p><a href="#RepeatableInMemoryStream">Repeatable In Memory Stream</a></p>
+</li>
+<li>
+<p><a href="#RepeatableFileStoreStream">Repeatable File Store Stream</a></p>
+</li>
+<li>
+<p>non-repeatable-stream</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configure if repeatable streams should be used and their behaviour</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Target Variable</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>String</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of a variable on which the operation&#8217;s output will be placed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Target Value</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>String</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An expression that will be evaluated against the operation&#8217;s output and the outcome of that expression will be stored in the target variable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#[payload]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error Mappings</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Array of <a href="#ErrorMapping">Error Mapping</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set of error mappings</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reconnection Strategy</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p><a href="#Reconnect">Reconnect</a></p>
+</li>
+<li>
+<p><a href="#ReconnectForever">Reconnect Forever</a></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A retry strategy in case of connectivity errors</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#160;</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_output_2">Output</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type</strong></p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Any</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_for_configurations_2">For Configurations</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Config">Config</a> &#160;</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_throws_2">Throws</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>BASIC:BAD_CREDENTIALS &#160;</p>
+</li>
+<li>
+<p>BASIC:CONNECTIVITY &#160;</p>
+</li>
+<li>
+<p>BASIC:ILLEGAL_ACTION &#160;</p>
+</li>
+<li>
+<p>BASIC:INVALID_PARAMETER &#160;</p>
+</li>
+<li>
+<p>BASIC:RETRY_EXHAUSTED &#160;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="PostMessage">Post Message</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>&lt;basic:post-message&gt;</code></p>
 </div>
 <div class="sect2">
-<h3 id="_parameters_4">Parameters</h3>
+<h3 id="_parameters_5">Parameters</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col>
@@ -2420,7 +2590,7 @@ p.tableblock {
 </table>
 </div>
 <div class="sect2">
-<h3 id="_output_2">Output</h3>
+<h3 id="_output_3">Output</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col>
@@ -2437,7 +2607,7 @@ p.tableblock {
 </table>
 </div>
 <div class="sect2">
-<h3 id="_for_configurations_2">For Configurations</h3>
+<h3 id="_for_configurations_3">For Configurations</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2447,7 +2617,7 @@ p.tableblock {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_throws_2">Throws</h3>
+<h3 id="_throws_3">Throws</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3014,7 +3184,7 @@ p.tableblock {
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-07-12 13:04:03 -03:00
+Last updated 2022-07-19 12:20:27 -03:00
 </div>
 </div>
 </body>

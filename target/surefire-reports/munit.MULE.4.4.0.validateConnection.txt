@@ -1,6 +1,68 @@
-SUCCESS - Test valid-paginated-json-response finished Successfully.
+ERROR - Test valid-paginated-json-response finished with an Error.
+org.mule.munit.runner.model.TestExecutionException: Error [BASIC:BAD_CREDENTIALS] while running test 'valid-paginated-json-response':null
+	at org.mule.munit.runner.flow.TestFlow.run(TestFlow.java:320)
+	at org.mule.munit.runner.model.Test.run(Test.java:94)
+	at org.mule.munit.runner.model.Suite.run(Suite.java:112)
+	at org.mule.munit.runner.SuiteRunner.doRun(SuiteRunner.java:61)
+	at org.mule.munit.runner.SuiteRunner.run(SuiteRunner.java:46)
+	at org.mule.munit.runner.remote.api.server.RunMessageHandler.runSuite(RunMessageHandler.java:99)
+	at org.mule.munit.runner.remote.api.server.RunMessageHandler.parseAndRun(RunMessageHandler.java:82)
+	at org.mule.munit.runner.remote.api.server.RunMessageHandler.handle(RunMessageHandler.java:75)
+	at org.mule.munit.runner.remote.api.server.RunnerServer.handleClientMessage(RunnerServer.java:145)
+	at org.mule.munit.runner.remote.api.server.RunnerServer.run(RunnerServer.java:91)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.mule.service.scheduler.internal.AbstractRunnableFutureDecorator.doRun(AbstractRunnableFutureDecorator.java:113)
+	at org.mule.service.scheduler.internal.RunnableFutureDecorator.run(RunnableFutureDecorator.java:54)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.util.concurrent.ExecutionException: org.mule.runtime.api.component.execution.ComponentExecutionException: java.lang.IllegalStateException
+	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:357)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1908)
+	at org.mule.munit.runner.flow.TestFlow$ExceptionAwareCallable.call(TestFlow.java:384)
+	at org.mule.munit.runner.flow.TestFlow$ExceptionAwareCallable.call(TestFlow.java:373)
+	... 6 more
+Caused by: org.mule.runtime.api.component.execution.ComponentExecutionException: java.lang.IllegalStateException
+Caused by: java.lang.IllegalStateException
+	at org.mule.extension.internal.BasicOperations.getChannels(BasicOperations.java:42)
+	at org.mule.extension.internal.BasicOperations$getChannels$MethodComponentExecutor.execute(Unknown Source)
+	at org.mule.runtime.module.extension.internal.runtime.execution.GeneratedMethodComponentExecutor.execute(GeneratedMethodComponentExecutor.java:98)
+	at org.mule.runtime.module.extension.internal.runtime.execution.CompletableMethodOperationExecutor.doExecute(CompletableMethodOperationExecutor.java:29)
+	at org.mule.runtime.module.extension.internal.runtime.execution.AbstractCompletableMethodOperationExecutor.execute(AbstractCompletableMethodOperationExecutor.java:63)
+	at org.mule.runtime.module.extension.internal.runtime.operation.DefaultExecutionMediator.executeCommand(DefaultExecutionMediator.java:229)
+	at org.mule.runtime.module.extension.internal.runtime.operation.DefaultExecutionMediator.executeWithInterceptors(DefaultExecutionMediator.java:213)
+	at org.mule.runtime.module.extension.internal.runtime.operation.DefaultExecutionMediator.lambda$execute$1(DefaultExecutionMediator.java:132)
+	at org.mule.runtime.module.extension.internal.runtime.operation.DefaultExecutionMediator.lambda$new$0(DefaultExecutionMediator.java:65)
+	at org.mule.runtime.module.extension.internal.runtime.operation.DefaultExecutionMediator.withExecutionTemplate(DefaultExecutionMediator.java:298)
+	at org.mule.runtime.module.extension.internal.runtime.operation.DefaultExecutionMediator.execute(DefaultExecutionMediator.java:131)
+	at org.mule.runtime.module.extension.internal.runtime.operation.ComponentMessageProcessor.executeOperation(ComponentMessageProcessor.java:576)
+	at org.mule.runtime.module.extension.internal.runtime.operation.ComponentMessageProcessor.prepareAndExecuteOperation(ComponentMessageProcessor.java:799)
+	at org.mule.runtime.module.extension.internal.runtime.operation.ComponentMessageProcessor.lambda$onEventSynchronous$16(ComponentMessageProcessor.java:478)
+	at org.mule.runtime.module.extension.internal.runtime.operation.ComponentMessageProcessor.onEventSynchronous(ComponentMessageProcessor.java:485)
+	at org.mule.runtime.module.extension.internal.runtime.operation.ComponentMessageProcessor.lambda$null$6(ComponentMessageProcessor.java:393)
+	at reactor.core.publisher.FluxPeekFuseable$PeekFuseableConditionalSubscriber.onNext(FluxPeekFuseable.java:482)
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:287)
+	at reactor.core.publisher.FluxPeekFuseable$PeekFuseableConditionalSubscriber.onNext(FluxPeekFuseable.java:496)
+	at org.mule.runtime.core.privileged.processor.chain.AbstractMessageProcessorChain$2.onNext(AbstractMessageProcessorChain.java:417)
+	at org.mule.runtime.core.privileged.processor.chain.AbstractMessageProcessorChain$2.onNext(AbstractMessageProcessorChain.java:412)
+	at reactor.core.publisher.FluxHide$SuppressFuseableSubscriber.onNext(FluxHide.java:127)
+	at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onNext(FluxPeekFuseable.java:204)
+	at reactor.core.publisher.FluxOnAssembly$OnAssemblySubscriber.onNext(FluxOnAssembly.java:345)
+	at reactor.core.publisher.FluxSubscribeOnValue$ScheduledScalar.run(FluxSubscribeOnValue.java:178)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:50)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:27)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.mule.service.scheduler.internal.AbstractRunnableFutureDecorator.doRun(AbstractRunnableFutureDecorator.java:113)
+	at org.mule.service.scheduler.internal.RunnableFutureDecorator.run(RunnableFutureDecorator.java:54)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+SUCCESS - Test valid-paginated-json-response2 finished Successfully.
 SUCCESS - Test validateConnection finished Successfully.
 
+null
 ==============================================================================
-Tests run: 2 - Failures: 0 - Errors: 0 - Skipped: 0 - Time elapsed: 47.208 sec
+Tests run: 3 - Failures: 0 - Errors: 1 - Skipped: 0 - Time elapsed: 60.534 sec
 ==============================================================================
